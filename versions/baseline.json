@@ -1,0 +1,8 @@
+{
+  "default": {
+    "CGDK.buffer": {
+      "baseline": "5.0.0",
+      "port-version": 0
+    }
+  }
+}
