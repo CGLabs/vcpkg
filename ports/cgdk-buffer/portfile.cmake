@@ -3,7 +3,7 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO CGLabs/CGDK.buffer
     REF 806c0f27ccff5265e66c67bcbe0704a1428a408d
-    SHA512 1
+    SHA512 0
     HEAD_REF master
 )
 
