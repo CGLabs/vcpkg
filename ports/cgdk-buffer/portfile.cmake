@@ -8,11 +8,15 @@ vcpkg_from_github(
 )
 
 # Put the licence file where vcpkg expects it
-file(COPY ${SOURCE_PATH}/LICENSE DESTINATION ${CURRENT_PACKAGES_DIR}/LICENSE)
-file(RENAME ${CURRENT_PACKAGES_DIR}/LICENSE ${CURRENT_PACKAGES_DIR}/copyright)
+file(COPY ${SOURCE_PATH}/LICENSE DESTINATION ${CURRENT_PACKAGES_DIR}/share/cgdk-buffer/LICENSE)
+file(RENAME ${CURRENT_PACKAGES_DIR}/share/cgdk-buffer/LICENSE ${CURRENT_PACKAGES_DIR}/share/cgdk-buffer/copyright)
 
 # Copy the constexpr header files
-file(GLOB HEADER_FILES_1 ${SOURCE_PATH}/C++/include/cgdk/*.*)
+file(GLOB HEADER_FILES ${SOURCE_PATH}/src/include/*.h)
+file(COPY ${HEADER_FILES} DESTINATION ${CURRENT_PACKAGES_DIR}/include)
+
+# Copy the constexpr header files
+file(GLOB HEADER_FILES_1 ${SOURCE_PATH}/C++/include/cgdk/*)
 file(GLOB HEADER_FILES_2 ${SOURCE_PATH}/C++/include/cgdk/buffers/*.*)
 file(COPY ${HEADER_FILES_1} DESTINATION ${CURRENT_PACKAGES_DIR}/include)
 file(COPY ${HEADER_FILES_2} DESTINATION ${CURRENT_PACKAGES_DIR}/include/buffers)
